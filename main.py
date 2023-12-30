@@ -4,8 +4,8 @@ import requests
 mastodon_instance_url = 'https://botsin.space'
 
 # Retrieve secrets from GitHub
-access_token = os.getenv('ACCESS_TOKEN')
-wordnik_api_key = os.getenv('WORDNIK_API_KEY')
+access_token = os.environ('ACCESS_TOKEN')
+wordnik_api_key = os.environ('WORDNIK_API_KEY')
 
 # Wordnik API endpoint for the word of the day
 wordnik_url = f'http://api.wordnik.com/v4/words.json/wordOfTheDay?api_key={wordnik_api_key}'
