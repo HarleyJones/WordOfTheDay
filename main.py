@@ -1,14 +1,25 @@
 import os
 import requests
 
+from atproto import Client, client_utils
+
 mastodon_instance_url = 'https://botsin.space'
 
 # Retrieve secrets from GitHub
 access_token = os.environ['ACCESS_TOKEN']
+at_password = os.environ['AT_PASSWORD']
 wordnik_api_key = os.environ['API_KEY']
 
 # Wordnik API endpoint for the word of the day
 wordnik_url = f'http://api.wordnik.com/v4/words.json/wordOfTheDay?api_key={wordnik_api_key}'
+
+def postBluesky(toot):
+    client = Client()
+    client.login('wotd.bsky.social', at_password)
+    
+    text = client_utils.TextBuilder().text(toot)
+    post = client.send_post(text)
+    client.like(post.uri, post.cid)
 
 try:
     # Get the word of the day from Wordnik
@@ -33,6 +44,7 @@ try:
     # Make the API request to post the toot
     headers = {'Authorization': f'Bearer {access_token}'}
     response = requests.post(toot_url, params=params, headers=headers)
+    postBluesky(toot)
 
     if response.status_code == 200:
         print("Toot posted successfully!")
