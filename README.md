@@ -2,6 +2,7 @@
 A bot that posts the Word of The Day 📕
 
 [Mastodon](https://botsin.space/@WOTD) - ```@WOTD@botsin.space```
+
 [ATProtocol (Bluesky)](https://bsky.app/profile/did:plc:sulvqvqeu4diey3exan65emu) - ```wotd.bsky.social```
 
 ## DISCLAIMER
