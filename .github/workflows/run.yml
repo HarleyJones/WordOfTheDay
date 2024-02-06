@@ -1,9 +1,9 @@
-name: Daily Toot with Secrets
+name: Create post
 
 on:
     schedule:
         - cron: '0 0 * * *'  # Run daily at midnight UTC
-    workflow_dispatch:  # Manually trigger the workflow
+    workflow_dispatch:  # Allows me to test the workflow
     
 
 jobs:
@@ -24,9 +24,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # If you have any dependencies
 
-    - name: Run Toot script
+    - name: Run main.py
       run: python main.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         API_KEY: ${{ secrets.API_KEY }}
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        AT_PASSWORD: ${{ secrets.AT_PASSWORD }}
