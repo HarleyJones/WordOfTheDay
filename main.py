@@ -15,7 +15,7 @@ wordnik_url = f'http://api.wordnik.com/v4/words.json/wordOfTheDay?api_key={wordn
 
 def postBluesky(toot):
     client = Client()
-    client.login('wotd.bsky.social', at_password)
+    client.login('wotd.skeets.online', at_password)
     
     text = client_utils.TextBuilder().text(toot)
     post = client.send_post(text)
