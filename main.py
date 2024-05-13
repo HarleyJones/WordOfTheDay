@@ -5,7 +5,7 @@ import random
 from atproto import Client, client_utils
 
 mastodon_instance_url = 'https://botsin.space'
-debugTesting = 0
+debugTesting = 1
 
 # Retrieve secrets from GitHub
 if (debugTesting == 0):
@@ -32,7 +32,7 @@ try:
     definition = definitions[index]
 
     # Format the toot
-    toot = f"📚 The word of the day is {word}📚\n\nDefinition(s)\n{definition}"
+    toot = f"📚 Word of the day: {word}\n\nDefinition(s):\n{definition}"
     print(toot)
     if (debugTesting == 0):
         # Mastodon API endpoint for posting a status
