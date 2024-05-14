@@ -5,7 +5,7 @@ import random
 from atproto import Client, client_utils
 
 mastodon_instance_url = 'https://botsin.space'
-debugTesting = 1
+debugTesting = 0
 
 # Retrieve secrets from GitHub
 if (debugTesting == 0):
