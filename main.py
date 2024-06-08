@@ -14,7 +14,7 @@ if (debugTesting == 0):
 
 def postBluesky(toot):
     client = Client()
-    client.login('wotd.skeets.online', at_password)
+    client.login('wotd.bsky.social', at_password)
     
     text = client_utils.TextBuilder().text(toot)
     post = client.send_post(text)
