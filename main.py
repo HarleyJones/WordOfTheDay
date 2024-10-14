@@ -32,8 +32,7 @@ try:
     definition = definitions[index]
 
     # Format the toot
-    toot = f"📚 Word of the day: {word}\n\nDefinition(s):\n{definition}"
-    print(toot)
+    toot = f"📚 The word of the day is {word}!\n––––––––––\nDefinition/s:\n{definition}\n#wordoftheday #wotd #english #bot"
     if (debugTesting == 0):
         # Mastodon API endpoint for posting a status
         toot_url = f"{mastodon_instance_url}/api/v1/statuses"
