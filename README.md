@@ -3,7 +3,7 @@ A bot that posts the Word of The Day to [Mastodon](https://botsin.space/@WOTD) &
 
 ## You can find this bot on:
 - [Mastodon](https://botsin.space/@WOTD) - ```@WOTD@botsin.space```
-- [Bluesky](https://bsky.app/profile/did:plc:sulvqvqeu4diey3exan65emu) - ```@wotd.bsky.social```
+- [Bluesky](https://bsky.app/profile/did:plc:sulvqvqeu4diey3exan65emu) - ```@wotd.bluesky.bot```
 
 ## LICENSE
 ```
