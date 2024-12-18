@@ -4,7 +4,7 @@ import requests
 import random
 from atproto import Client, client_utils
 
-mastodon_instance_url = 'https://botsin.space'
+mastodon_instance_url = 'https://mastodon.cloud'
 debugTesting = 0
 
 # Retrieve secrets from GitHub
@@ -14,7 +14,7 @@ if (debugTesting == 0):
 
 def postBluesky(toot):
     client = Client()
-    client.login('wotd.bsky.social', at_password)
+    client.login('wotd.bluesky.bot', at_password)
     
     text = client_utils.TextBuilder().text(toot)
     post = client.send_post(text)
@@ -32,7 +32,8 @@ try:
     definition = definitions[index]
 
     # Format the toot
-    toot = f"📚 The word of the day is {word}!\n––––––––––\nDefinition/s:\n{definition}\n\n#wordoftheday #wotd #english #bot"
+    formatted_text = f"📚 The word of the day is {word}!\n––––––––––\nDefinition/s:\n{definition}"
+    toot = f"{formatted_text}\n\n#wordoftheday #wotd #english #bot"
     if (debugTesting == 0):
         # Mastodon API endpoint for posting a status
         toot_url = f"{mastodon_instance_url}/api/v1/statuses"
@@ -45,7 +46,7 @@ try:
         # Make the API request to post the toot
         headers = {'Authorization': f'Bearer {access_token}'}
         response = requests.post(toot_url, params=params, headers=headers)
-        postBluesky(toot)
+        postBluesky(formatted_text)
 
         if response.status_code == 200:
             print("Toot posted successfully!")
