@@ -12,9 +12,9 @@ def postBluesky(toot):
 
     # Use TextBuilder to create the post with hashtags
     text_builder = client_utils.TextBuilder(toot)
-    text_builder.tag('#WordOfTheDay', 'WordOfTheDay')
-    text_builder.tag('#WOTD', 'WOTD')
-    text_builder.tag('#BOT', 'BOT')
+    text_builder.tag('#WordOfTheDay')
+    text_builder.tag('#WOTD')
+    text_builder.tag('#BOT')
 
     post = client.send_post(text_builder)
     client.like(post.uri, post.cid)
